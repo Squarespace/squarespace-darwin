@@ -24,6 +24,18 @@ const instance = new Darwin({
 });
 ````
 
+### Using ES6
+
+If you prefer to handle transpiling and polyfilling on your own, you can import ES6 from Darwin:
+
+```js
+import darwin from '@squarespace/darwin/src';
+```
+
+Alternately, Darwin specifies a `module` property in `package.json` that points to the uncompiled `src/index.js`, so you may be able to simply import `@squarespace/darwin` if you're using one of the following bundlers:
+* [Webpack 2](https://webpack.js.org/configuration/resolve/#resolve-mainfields)
+* [Rollup](https://github.com/rollup/rollup-plugin-node-resolve#rollup-plugin-node-resolve)
+
 ## Reference
 
 ### new Darwin(config)
