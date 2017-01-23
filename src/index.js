@@ -103,10 +103,10 @@ class Darwin {
 
     mutations.some((mutation) => {
       if (mutation.type === 'childList') {
-        if (document.readyState === 'interactive') {
-          this.reactToMutations();
-        } else {
+        if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', this.reactToMutations);
+        } else {
+          this.reactToMutations();
         }
         return true;
       }
