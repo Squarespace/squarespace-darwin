@@ -1,6 +1,6 @@
 {
   "name": "@squarespace/darwin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MutationObserver implementation for convenience",
   "author": "Squarespace, Inc.",
   "license": "SEE LICENSE IN LICENSE.txt",
