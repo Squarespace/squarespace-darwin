@@ -102,14 +102,11 @@ class Darwin {
       return;
     }
 
-    mutations.some((mutation) => {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', this.reactToMutations);
-      } else {
-        this.reactToMutations();
-      }
-      return true;
-    });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', this.reactToMutations);
+    } else {
+      this.reactToMutations();
+    }
   }
 
   /**
