@@ -81,7 +81,8 @@ class Darwin {
       Array.from(document.querySelectorAll(sel)).forEach((target) => {
         this.observer.observe(target, {
           childList: true,
-          subtree: true
+          subtree: true,
+          attributes: true
         });
       });
     });
@@ -102,14 +103,12 @@ class Darwin {
     }
 
     mutations.some((mutation) => {
-      if (mutation.type === 'childList') {
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', this.reactToMutations);
-        } else {
-          this.reactToMutations();
-        }
-        return true;
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', this.reactToMutations);
+      } else {
+        this.reactToMutations();
       }
+      return true;
     });
   }
 
